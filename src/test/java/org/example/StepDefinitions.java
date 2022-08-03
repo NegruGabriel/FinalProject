@@ -8,17 +8,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.time.Duration;
 
 public class StepDefinitions {
     private final WebDriver driver = new ChromeDriver();
 
     private MainPage mainPage;
+    //private InPersonPage inPersonPage;
+
 
     public StepDefinitions() {
         // Article: https://www.softwaretestingmaterial.com/implicit-waits-selenium-webdriver/
@@ -98,7 +96,7 @@ public class StepDefinitions {
 
     @Then("I will be redirected to the In Person Page")
     public void iWillBeRedirectedToTheInPersonPage() {
-        Assert.assertEquals("In Person", mainPage.getInPersonHeader());
+        Assert.assertEquals("In Person", mainPage.getCourseTypeHeader());
     }
 
 
@@ -109,11 +107,27 @@ public class StepDefinitions {
 
     @Then("I will be redirected to the Hybrid Page")
     public void iWillBeRedirectedToTheHybridPage() {
-        Assert.assertEquals("Hybrid",mainPage.getHybridHeader());
+        Assert.assertEquals("Hybrid",mainPage.getCourseTypeHeader());
     }
 
     @When("I click on the Read More button from the Virtual section")
     public void iClickOnTheReadMoreButtonFromTheVirtualSection() {
         mainPage.clickOnReadMoreForVirtual();
+    }
+
+    @Then("I will be redirected to the Virtual Page")
+    public void iWillBeRedirectedToTheVirtualPage() {
+        Assert.assertEquals("Virtual",mainPage.getCourseTypeHeader());
+    }
+
+    @Given("I am on In Person Page")
+    public void onTheInPersonPage() {
+        driver.get("C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/in_person.html");
+    }
+
+    @When("I click on return button")
+    public void iClickOnReturnButton() {
+        //inPersonPage.clickOnReturnButton();
+        
     }
 }

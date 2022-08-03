@@ -35,15 +35,17 @@ public class MainPage {
     private WebElement coursesTypesSection;
 
     @FindBy(xpath = "/html/body/h1")
-    private  WebElement inPersonHeader;
+    private  WebElement courseTypeHeader;
     @FindBy(xpath ="/html/body/section[3]/div/div/div[2]/div/div/a" )
     private WebElement readMoreForHybridLink;
 
     @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/a")
     private  WebElement readMoreForVirtualLink;
 
+    @FindBy(xpath = "/html/body/a")
+    private  WebElement mainPageLink;
+
     private WebDriver driver;
-    private AbstractButton hybridHeader;
 
 
     public MainPage(WebDriver driver) {
@@ -95,18 +97,13 @@ public class MainPage {
         readMoreForInPersonLink.click();
     }
 
-    public String getInPersonHeader() {
-        return this.inPersonHeader.getText();
+    public String getCourseTypeHeader() {
+        return this.courseTypeHeader.getText();
     }
-
 
     public void clickOnReadMoreForHybrid() {
         Utils.scrollToElement(driver,coursesTypesSection);
         readMoreForHybridLink.click();
-    }
-
-    public String getHybridHeader() {
-        return this.hybridHeader.getText();
     }
 
     public void clickOnReadMoreForVirtual() {
