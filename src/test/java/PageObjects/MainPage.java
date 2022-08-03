@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.swing.*;
+
 public class MainPage {
     @FindBy(xpath = "//*[@id=\"navmenu\"]/ul/li[3]/a")
     private WebElement instructors;
@@ -27,12 +29,22 @@ public class MainPage {
     private WebElement submitButton;
 
     @FindBy(xpath ="/html/body/section[3]/div/div/div[3]/div/div/a" )
-    private WebElement readMoreForInPerson;
+    private WebElement readMoreForInPersonLink;
+
+    @FindBy(xpath ="//section[@class='p-5'][1]" )
+    private WebElement coursesTypesSection;
 
     @FindBy(xpath = "/html/body/h1")
     private  WebElement inPersonHeader;
+    @FindBy(xpath ="/html/body/section[3]/div/div/div[2]/div/div/a" )
+    private WebElement readMoreForHybridLink;
+
+    @FindBy(xpath = "/html/body/section[3]/div/div/div[1]/div/div/a")
+    private  WebElement readMoreForVirtualLink;
 
     private WebDriver driver;
+    private AbstractButton hybridHeader;
+
 
     public MainPage(WebDriver driver) {
         this.driver=driver;
@@ -79,11 +91,26 @@ public class MainPage {
     }
 
     public void clickOnReadMoreForInPerson() {
-        Utils.scrollToElement(driver, readMoreForInPerson);
-        readMoreForInPerson.click();
+        Utils.scrollToElement(driver, coursesTypesSection);
+        readMoreForInPersonLink.click();
     }
 
     public String getInPersonHeader() {
         return this.inPersonHeader.getText();
+    }
+
+
+    public void clickOnReadMoreForHybrid() {
+        Utils.scrollToElement(driver,coursesTypesSection);
+        readMoreForHybridLink.click();
+    }
+
+    public String getHybridHeader() {
+        return this.hybridHeader.getText();
+    }
+
+    public void clickOnReadMoreForVirtual() {
+        Utils.scrollToElement(driver,coursesTypesSection);
+        readMoreForVirtualLink.click();
     }
 }

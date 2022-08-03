@@ -100,4 +100,20 @@ public class StepDefinitions {
     public void iWillBeRedirectedToTheInPersonPage() {
         Assert.assertEquals("In Person", mainPage.getInPersonHeader());
     }
+
+
+    @When("I click on the Read More button from the Hybrid section")
+    public void iClickOnTheReadMoreButtonFromTheHybridSection() {
+        mainPage.clickOnReadMoreForHybrid();
+    }
+
+    @Then("I will be redirected to the Hybrid Page")
+    public void iWillBeRedirectedToTheHybridPage() {
+        Assert.assertEquals("Hybrid",mainPage.getHybridHeader());
+    }
+
+    @When("I click on the Read More button from the Virtual section")
+    public void iClickOnTheReadMoreButtonFromTheVirtualSection() {
+        mainPage.clickOnReadMoreForVirtual();
+    }
 }

@@ -24,7 +24,6 @@ Feature: Main Page
     And  click on Submit
     Then a red border will be shown
 
-
   Scenario: Go to the In Person Page
         Given I am on Main Page
         When I click on the Read More button from the In Person section
