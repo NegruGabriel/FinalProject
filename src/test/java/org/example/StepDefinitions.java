@@ -2,6 +2,7 @@ package org.example;
 
 import PageObjects.MainPage;
 import io.cucumber.java.After;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -63,6 +64,40 @@ public class StepDefinitions {
     @Then("I am redirected on the Sign Up Page")
     public void iAmRedirectedOnTheSignUpPage() {
         Assert.assertEquals("Personal information", mainPage.getPersonalInformationHeader());
+    }
 
+    @When("I enter an invalid mail")
+    public void iEnterAnInvalidMail() {
+        mainPage.writeEmailInNewsletterTextBox("asdg@.com");
+    }
+
+    @And("click on Submit")
+    public void clickOnSubmit() {
+        mainPage.clickOnSubmit();
+    }
+
+    @Then("a red border will be shown")
+    public void aRedBorderWillBeShown() {
+      Assert.assertEquals(true, mainPage.isNewsletterTextBoxWithError());
+    }
+
+    @When("I enter a valid mail")
+    public void iEnterAValidMail() {
+        mainPage.writeEmailInNewsletterTextBox("asdf@yahoo.com");
+    }
+
+    @Then("a confirmation message appears")
+    public void aConfirmationMessageAppears() {
+     Assert.assertEquals(true,  mainPage.popUpAppears());
+    }
+
+    @When("I click on the Read More button from the In Person section")
+    public void iClickOnTheReadMoreButtonFromTheInPersonSection() {
+        mainPage.clickOnReadMoreForInPerson();
+    }
+
+    @Then("I will be redirected to the In Person Page")
+    public void iWillBeRedirectedToTheInPersonPage() {
+        Assert.assertEquals("In Person", mainPage.getInPersonHeader());
     }
 }
