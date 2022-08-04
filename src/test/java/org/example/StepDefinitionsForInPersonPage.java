@@ -28,8 +28,8 @@ public class StepDefinitionsForInPersonPage {
         inPersonPage.clickOnReturnButton();
     }
 
-    @Then("I will be redirected to the Main Page")
-    public void iWillBeRedirectedToTheMainPage() {
+    @Then("I will be redirected to the Main Page from In Person Page")
+    public void iWillBeRedirectedToTheMainPageFromInPersonPage() {
        Assert.assertEquals(Utils.getMainPageUrl(), driver.getCurrentUrl());
     }
 }
