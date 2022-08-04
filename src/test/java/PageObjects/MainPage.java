@@ -36,6 +36,7 @@ public class MainPage {
 
     @FindBy(xpath = "/html/body/h1")
     private  WebElement courseTypeHeader;
+
     @FindBy(xpath ="/html/body/section[3]/div/div/div[2]/div/div/a" )
     private WebElement readMoreForHybridLink;
 

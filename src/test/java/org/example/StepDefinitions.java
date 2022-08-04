@@ -1,5 +1,6 @@
 package org.example;
 
+import PageObjects.InPersonPage;
 import PageObjects.MainPage;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -15,8 +16,6 @@ public class StepDefinitions {
     private final WebDriver driver = new ChromeDriver();
 
     private MainPage mainPage;
-    //private InPersonPage inPersonPage;
-
 
     public StepDefinitions() {
         // Article: https://www.softwaretestingmaterial.com/implicit-waits-selenium-webdriver/
@@ -31,7 +30,7 @@ public class StepDefinitions {
 
     @Given("I am on Main Page")
     public void onTheMainPage() {
-        driver.get("C:\\Users\\Admin\\Downloads\\Testing-Env-master\\Testing-Env-master\\index.html");
+        driver.get(Utils.getMainPageUrl());
     }
 
     @When("I click on Instructors")
@@ -120,14 +119,5 @@ public class StepDefinitions {
         Assert.assertEquals("Virtual",mainPage.getCourseTypeHeader());
     }
 
-    @Given("I am on In Person Page")
-    public void onTheInPersonPage() {
-        driver.get("C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/in_person.html");
-    }
 
-    @When("I click on return button")
-    public void iClickOnReturnButton() {
-        //inPersonPage.clickOnReturnButton();
-        
-    }
 }

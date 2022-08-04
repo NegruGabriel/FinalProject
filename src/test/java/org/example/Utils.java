@@ -8,6 +8,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Utils {
 
+    public static String getMainPageUrl()
+    {
+        return "C:\\Users\\Admin\\Downloads\\Testing-Env-master\\Testing-Env-master\\index.html";
+    }
+
     //Waits for an element to load for a specified period of time.
     public static void waitForElementToLoad(int timeUnit) {
         try {
