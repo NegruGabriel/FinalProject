@@ -34,6 +34,9 @@ public class MainPage {
     @FindBy(xpath ="//section[@class='p-5'][1]" )
     private WebElement coursesTypesSection;
 
+    @FindBy(xpath ="//section[@id='learn-selenium']" )
+    private WebElement learnSeleniumSection;
+
     @FindBy(xpath = "/html/body/h1")
     private  WebElement courseTypeHeader;
 
@@ -45,6 +48,9 @@ public class MainPage {
 
     @FindBy(xpath = "/html/body/a")
     private  WebElement mainPageLink;
+
+    @FindBy(xpath = "//*[@id=\"learn-selenium\"]/div/div/div[1]/a")
+    private  WebElement readMoreForLearnSeleniumLink;
 
     private WebDriver driver;
 
@@ -110,5 +116,10 @@ public class MainPage {
     public void clickOnReadMoreForVirtual() {
         Utils.scrollToElement(driver,coursesTypesSection);
         readMoreForVirtualLink.click();
+    }
+
+    public void clickOnReadMoreForLearnSelenium() {
+        Utils.scrollToElement(driver,learnSeleniumSection);
+        readMoreForLearnSeleniumLink.click();
     }
 }

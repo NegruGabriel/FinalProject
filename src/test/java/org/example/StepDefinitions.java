@@ -111,6 +111,7 @@ public class StepDefinitions {
 
     @When("I click on the Read More button from the Virtual section")
     public void iClickOnTheReadMoreButtonFromTheVirtualSection() {
+
         mainPage.clickOnReadMoreForVirtual();
     }
 
@@ -120,4 +121,13 @@ public class StepDefinitions {
     }
 
 
+    @When("I click on the Read More from Learn Selenium")
+    public void iClickOnTheReadMoreFromLearnSelenium() {
+        mainPage.clickOnReadMoreForLearnSelenium();
+    }
+
+    @Then("I will redirected to Fundamentals page")
+    public void iWillRedirectedToFundamentalsPage() {
+        Assert.assertEquals("Fundamentals page", mainPage.getCourseTypeHeader());
+    }
 }

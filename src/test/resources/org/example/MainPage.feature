@@ -41,7 +41,7 @@ Feature: Main Page
 
   Scenario:  Go to Read More from Learn Selenium
           Given I am on Main Page
-          When I click on Read More from Learn Selenium
+          When I click on the Read More from Learn Selenium
           Then I will redirected to Fundamentals page
 
   Scenario:  Go to Main Page from Learn Selenium

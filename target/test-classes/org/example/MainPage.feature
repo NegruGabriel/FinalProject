@@ -41,8 +41,13 @@ Feature: Main Page
 
   Scenario:  Go to Read More from Learn Selenium
           Given I am on Main Page
-          When I click on Read More from Learn Selenium
+          When I click on the Read More from Learn Selenium
           Then I will redirected to Fundamentals page
+
+  Scenario:  Go to Main Page from Learn Selenium
+    Given I am on Fundamentals page from Learn Selenium
+    When I click on Return from Learn Selenium
+    Then I will redirected to Main page
 
   Scenario: Go to Steve Smith FB
             Given I am on Instructors Page
@@ -62,8 +67,3 @@ Scenario: Go to "How do I sign up?" from Questions
     When I click on the Questions Button
     And I click on "How do I sign up?"
     Then the answear will appear
-
-  Scenario:  Go to Main Page from Learn Selenium
-    Given I am on Fundamentals page from Learn Selenium
-    When I click on Return from Learn Selenium
-    Then I will redirected to Main page
