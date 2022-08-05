@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class MainPage {
     @FindBy(xpath = "//*[@id=\"navmenu\"]/ul/li[3]/a")
-    private WebElement instructors;
+    private WebElement instructorsLink;
 
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/h2")
     private WebElement instructorsHeader;
@@ -70,7 +70,13 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"questions\"]/div/h2")
     private WebElement questionsSection;
 
+
+
     @FindBy(xpath ="//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[1]" )
+    private WebElement johnDoeTwitterLink;
+
+    @FindBy (xpath ="//*[@id=\"instructors\"]/div/div/div[2]/div/div/a[3]" )
+    private WebElement janeDoeLinkedInLink;
 
 
     private WebDriver driver;
@@ -83,7 +89,7 @@ public class MainPage {
     }
 
     public void clickOnInstructors() {
-        instructors.click();
+        instructorsLink.click();
     }
 
     public String getInstructorsHeader(){
@@ -173,4 +179,12 @@ public class MainPage {
         whereIsYourInstitutionLocatedButton.click();
     }
 
+    public void clickOnJohnDoeTwitterLink() {
+        Utils.scrollToElement(driver,instructorsHeader);
+        johnDoeTwitterLink.click();
+    }
+    public void clickOnJaneDoeLinkedInLink() {
+        Utils.scrollToElement(driver,instructorsHeader);
+        janeDoeLinkedInLink.click();
+    }
 }

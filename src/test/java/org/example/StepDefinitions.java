@@ -202,4 +202,26 @@ public class StepDefinitions {
         driver.get("C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/index.html#instructors");
 
     }
+
+
+
+    @When("I click on John Doe Twitter page")
+    public void iClickOnJohnDoeTwitterPage() {
+        mainPage.clickOnJohnDoeTwitterLink();
+    }
+
+    @Then("I will redirected to Twitter page")
+    public void iWillRedirectedToTwitterPage() {
+        Assert.assertEquals("https://twitter.com/", driver.getCurrentUrl());
+    }
+
+    @And("I click on Jane Doe LinkedIn page")
+    public void iClickOnJaneDoeLinkedInPage() {
+        mainPage.clickOnJaneDoeLinkedInLink();
+    }
+
+    @Then("I will redirected to LinkedIn page")
+    public void iWillRedirectedToLinkedInPage() {
+        Assert.assertEquals("https://www.linkedin.com/feed/",driver.getCurrentUrl() );
+    }
 }

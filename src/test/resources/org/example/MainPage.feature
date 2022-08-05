@@ -58,22 +58,26 @@ Scenario: Go to "How do I sign up?" from Questions
     Then the institution answer will appear
 
 
-  Scenario: Go to John Doe Twiter page
-    Given I am on Instructors Page
-    When I click on John Doe Twiter page
-    Then I will redirected to Twiter page
+  Scenario: Go to John Doe Twitter page
+    Given I am on Main Page
+    When I click on Instructors
+    And I click on John Doe Twitter page
+    Then I will redirected to Twitter page
 
-  Scenario: Go to Jane Doe LinkIn page
-    Given I am on Instructors Page
-    When I click on Jane Doe LinkIn page
-    Then I will redirected to LinkIn page
+  Scenario: Go to Jane Doe LinkedIn page
+    Given I am on Main Page
+    When I click on Instructors
+    And I click on Jane Doe LinkedIn page
+    Then I will redirected to LinkedIn page
 
   Scenario: Go to Sara Smith Instagram page
-    Given I am on Instructors Page
-    When I click on Sara Smith Instagram page
+    Given I am on Main Page
+    When I click on Instructors
+    And I click on Sara Smith Instagram page
     Then I will redirected to Instagram page
 
   Scenario: Go to Steve Smith FB page
-    Given I am on Instructors Page
-    When I click on Steve Smith FB page
+    Given I am on Main Page
+    When I click on Instructors
+    And I click on Steve Smith FB page
     Then I will redirected to FB page
