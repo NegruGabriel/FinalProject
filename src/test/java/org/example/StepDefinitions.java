@@ -224,4 +224,24 @@ public class StepDefinitions {
     public void iWillRedirectedToLinkedInPage() {
         Assert.assertEquals("https://www.linkedin.com/feed/",driver.getCurrentUrl() );
     }
+
+    @And("I click on Sara Smith Instagram page")
+    public void iClickOnSaraSmithInstagramPage() {
+        mainPage.clickOnSaraSmithInstagramPage();
+    }
+
+    @Then("I will redirected to Instagram page")
+    public void iWillRedirectedToInstagramPage() {
+        Assert.assertEquals("https://www.instagram.com/",driver.getCurrentUrl());
+    }
+
+    @And("I click on Steve Smith FB page")
+    public void iClickOnSteveSmithFBPage() {
+        mainPage.clickOnSteveSmithFbPage();
+    }
+
+    @Then("I will redirected to FB page")
+    public void iWillRedirectedToFBPage() {
+        Assert.assertEquals("https://www.facebook.com/",driver.getCurrentUrl());
+    }
 }

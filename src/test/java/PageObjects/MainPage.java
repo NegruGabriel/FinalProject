@@ -78,6 +78,12 @@ public class MainPage {
     @FindBy (xpath ="//*[@id=\"instructors\"]/div/div/div[2]/div/div/a[3]" )
     private WebElement janeDoeLinkedInLink;
 
+    @FindBy (xpath ="//*[@id=\"instructors\"]/div/div/div[4]/div/div/a[4]" )
+    private WebElement  saraSmithInstagramPage ;
+
+    @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[3]/div/div/a[2] ")
+    private WebElement steveSmithFbPage;
+
 
     private WebDriver driver;
 
@@ -186,5 +192,15 @@ public class MainPage {
     public void clickOnJaneDoeLinkedInLink() {
         Utils.scrollToElement(driver,instructorsHeader);
         janeDoeLinkedInLink.click();
+    }
+
+    public void clickOnSaraSmithInstagramPage() {
+        Utils.scrollToElement(driver,instructorsHeader);
+        saraSmithInstagramPage.click();
+    }
+
+    public void clickOnSteveSmithFbPage() {
+        Utils.scrollToElement(driver,instructorsHeader);
+        steveSmithFbPage.click();
     }
 }
