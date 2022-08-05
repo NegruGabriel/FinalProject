@@ -4,5 +4,5 @@ Feature: Hybrid Page
 
   Scenario: Return to Main Page from Hybrid Page
     Given  I am on Hybrid Page
-    When I click on return button
-    Then I will be redirected to the Main Page from Hybrid Page
+    When I click on the Return button from Hybrid
+    Then I will be redirected to the Main Page

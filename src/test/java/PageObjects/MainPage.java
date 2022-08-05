@@ -52,7 +52,29 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"learn-selenium\"]/div/div/div[1]/a")
     private  WebElement readMoreForLearnSeleniumLink;
 
+    @FindBy(xpath = "//*[@id=\"navmenu\"]/ul/li[2]/a")
+    private WebElement clickOnQuestionsLink;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[4]/h3/button")
+    private  WebElement howDoISignUpButton;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
+    private WebElement whereIsYourInstitutionLocatedButton;
+
+    @FindBy(xpath = "//div[@id=\"question-four\"]")
+    private WebElement howDoISignUpText;
+
+   @FindBy(xpath = "//div[@id=\"question-one\"]")
+    private WebElement whereIsYourInstitutionLocatedText;
+
+    @FindBy(xpath = "//*[@id=\"questions\"]/div/h2")
+    private WebElement questionsSection;
+
+    @FindBy(xpath ="//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[1]" )
+
+
     private WebDriver driver;
+
 
 
     public MainPage(WebDriver driver) {
@@ -85,8 +107,13 @@ public class MainPage {
     }
 
     public boolean isNewsletterTextBoxWithError() {
-        String classCss = this.newsletterTextBox.getAttribute("class");
+        String classCss = getCssClassForElement(newsletterTextBox);
         return "form-control error".equals(classCss);
+    }
+
+    private String getCssClassForElement(WebElement element)
+    {
+        return element.getAttribute("class");
     }
 
     public boolean popUpAppears() {
@@ -107,6 +134,15 @@ public class MainPage {
     public String getCourseTypeHeader() {
         return this.courseTypeHeader.getText();
     }
+    public boolean isVisibleHowDoISignUpText(){
+        String CssClass=getCssClassForElement(howDoISignUpText);
+        return "accordion-collapse collapse show".equals(CssClass);
+    }
+    public boolean isVisibleWhereIsYourInstitutionLocatedText(){
+        String CssClass=getCssClassForElement(whereIsYourInstitutionLocatedText);
+        return "accordion-collapse collapse show".equals(CssClass);
+
+    }
 
     public void clickOnReadMoreForHybrid() {
         Utils.scrollToElement(driver,coursesTypesSection);
@@ -122,4 +158,19 @@ public class MainPage {
         Utils.scrollToElement(driver,learnSeleniumSection);
         readMoreForLearnSeleniumLink.click();
     }
+
+    public void iClickOnTheQuestionsButton() {
+        clickOnQuestionsLink.click();
+    }
+
+    public void iClickOnHowDoISignUp (){
+        Utils.scrollToElement(driver,questionsSection);
+        howDoISignUpButton.click();
+    }
+
+    public void iClickOnWhereIsYourInstitutionLocated (){
+        Utils.scrollToElement(driver,questionsSection);
+        whereIsYourInstitutionLocatedButton.click();
+    }
+
 }

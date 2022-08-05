@@ -14,9 +14,9 @@ public class Utils {
     }
 
     //Waits for an element to load for a specified period of time.
-    public static void waitForElementToLoad(int timeUnit) {
+    public static void waitForElementToLoad(int seconds) {
         try {
-            TimeUnit.SECONDS.sleep(timeUnit);
+            TimeUnit.SECONDS.sleep(seconds);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

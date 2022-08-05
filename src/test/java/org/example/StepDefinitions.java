@@ -1,7 +1,6 @@
 package org.example;
 
-import PageObjects.InPersonPage;
-import PageObjects.MainPage;
+import PageObjects.*;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,16 +15,19 @@ public class StepDefinitions {
     private final WebDriver driver = new ChromeDriver();
 
     private MainPage mainPage;
+    private HybridPage hybridPage;
+    private InPersonPage inPersonPage;
+    private VirtualPage virtualPage;
+    private LearnSeleniumPage learnSeleniumPage;
 
     public StepDefinitions() {
-        // Article: https://www.softwaretestingmaterial.com/implicit-waits-selenium-webdriver/
-        // Implicit waits tell to the WebDriver to wait for certain amount of time before it
-        // throws an exception. Once we set the time, WebDriver will wait for the element
-        // based on the time we set before it throws an exception. The default setting is 0 (zero)
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
 
         driver.manage().window().maximize();
         mainPage = new MainPage(driver);
+        hybridPage = new HybridPage(driver);
+        inPersonPage = new InPersonPage(driver);
+        virtualPage = new VirtualPage(driver);
     }
 
     @Given("I am on Main Page")
@@ -55,7 +57,7 @@ public class StepDefinitions {
     @When("I click on Start the Enrollment")
     public void iClickOnStartTheEnrollment() {
         mainPage.clickOnStartTheEnrollment();
-        ///html/body/section[1]/div/div/div/a
+
     }
 
     @Then("I am redirected on the Sign Up Page")
@@ -129,5 +131,75 @@ public class StepDefinitions {
     @Then("I will redirected to Fundamentals page")
     public void iWillRedirectedToFundamentalsPage() {
         Assert.assertEquals("Fundamentals page", mainPage.getCourseTypeHeader());
+    }
+
+    @When("I click on the Questions Button")
+    public void iClickOnTheQuestionsButton() {
+        mainPage.iClickOnTheQuestionsButton();
+    }
+    
+    @And("I click on {string}")
+    public void iClickOn(String question) {
+        if (question.equals("How do I sign up?")) {
+            mainPage.iClickOnHowDoISignUp();
+    }else if (question.equals("Where is your institution located?")) {
+            mainPage.iClickOnWhereIsYourInstitutionLocated();
+        }
+    }
+
+
+    @Then("the Sign Up answer will appear")
+    public void theSignUpAnswerWillAppear() {
+        Utils.waitForElementToLoad(1);
+        Assert.assertEquals(true,mainPage.isVisibleHowDoISignUpText());
+
+    }
+    @Then("the institution answer will appear")
+    public void theInstitutionAnswerWillAppear() {
+        Utils.waitForElementToLoad(1);
+        Assert.assertEquals(true,mainPage.isVisibleWhereIsYourInstitutionLocatedText());
+
+    }
+
+    @Given("I am on Hybrid Page")
+    public void iAmOnHybridPage() {
+        driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/hybrid.html");
+    }
+
+    @When("I click on the Return button from Hybrid")
+    public void iClickOnReturnButton() {
+        hybridPage.clickOnReturnButton();
+    }
+
+    @Then("I will be redirected to the Main Page")
+    public void iWillBeRedirectedToTheMainPage() {
+        Assert.assertEquals("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/index.html", driver.getCurrentUrl());
+    }
+
+    @Given("I am on the In Person Page")
+    public void iAmOnTheInPersonPage() {
+        driver.get("C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/in_person.html");
+    }
+
+    @When("I click on the Return button from In Person")
+    public void iClickOnTheReturnButtonFromInPerson() {
+        inPersonPage.clickOnReturnButton();
+    }
+
+    @Given("I am on Virtual Page")
+    public void iAmOnVirtualPage() {
+        driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/virtual.html");
+    }
+
+    @When("I click on the Return button from Virtual")
+    public void iClickOnReturnButtonFromVirtualPage() {
+
+        virtualPage.clickOnReturnButton();
+    }
+
+    @Given("I am on Instructors Page")
+    public void iAmOnInstructorsPage() {
+        driver.get("C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/index.html#instructors");
+
     }
 }

@@ -4,5 +4,5 @@ Feature: In Person Page
 
     Scenario: Return to Main Page from In Person Page
       Given  I am on the In Person Page
-      When I click on the Return button
-      Then I will be redirected to the Main Page from In Person Page
+      When I click on the Return button from In Person
+      Then I will be redirected to the Main Page

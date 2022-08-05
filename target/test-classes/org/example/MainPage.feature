@@ -1,6 +1,7 @@
 Feature: Main Page
 
-  These tests will verify functionality of the
+  These tests will verify functionality of the Software testing course
+
 
   Scenario: Click on the Instructors
     Given I am on Main Page
@@ -39,31 +40,40 @@ Feature: Main Page
     When I click on the Read More button from the Virtual section
     Then I will be redirected to the Virtual Page
 
-  Scenario:  Go to Read More from Learn Selenium
+  Scenario:  Go to Read More from Learn Selenium page
           Given I am on Main Page
           When I click on the Read More from Learn Selenium
           Then I will redirected to Fundamentals page
-
-  Scenario:  Go to Main Page from Learn Selenium
-    Given I am on Fundamentals page from Learn Selenium
-    When I click on Return from Learn Selenium
-    Then I will redirected to Main page
-
-  Scenario: Go to Steve Smith FB
-            Given I am on Instructors Page
-            When I click on Steve Smith FB page
-     Then I will redirected to FB page
-
 
 Scenario: Go to "How do I sign up?" from Questions
   Given I am on Main Page
   When I click on the Questions Button
   And I click on "How do I sign up?"
-  Then the answear will appear
-
+  Then the Sign Up answer will appear
 
   Scenario: Go to "Where is your institution located?" from Questions
     Given I am on Main Page
     When I click on the Questions Button
-    And I click on "How do I sign up?"
-    Then the answear will appear
+    And I click on "Where is your institution located?"
+    Then the institution answer will appear
+
+
+  Scenario: Go to John Doe Twiter page
+    Given I am on Instructors Page
+    When I click on John Doe Twiter page
+    Then I will redirected to Twiter page
+
+  Scenario: Go to Jane Doe LinkIn page
+    Given I am on Instructors Page
+    When I click on Jane Doe LinkIn page
+    Then I will redirected to LinkIn page
+
+  Scenario: Go to Sara Smith Instagram page
+    Given I am on Instructors Page
+    When I click on Sara Smith Instagram page
+    Then I will redirected to Instagram page
+
+  Scenario: Go to Steve Smith FB page
+    Given I am on Instructors Page
+    When I click on Steve Smith FB page
+    Then I will redirected to FB page
