@@ -20,6 +20,8 @@ public class StepDefinitions {
     private VirtualPage virtualPage;
     private LearnSeleniumPage learnSeleniumPage;
 
+
+
     public StepDefinitions() {
 
 
@@ -28,6 +30,7 @@ public class StepDefinitions {
         hybridPage = new HybridPage(driver);
         inPersonPage = new InPersonPage(driver);
         virtualPage = new VirtualPage(driver);
+        learnSeleniumPage = new LearnSeleniumPage(driver);
     }
 
     @Given("I am on Main Page")
@@ -243,5 +246,22 @@ public class StepDefinitions {
     @Then("I will redirected to FB page")
     public void iWillRedirectedToFBPage() {
         Assert.assertEquals("https://www.facebook.com/",driver.getCurrentUrl());
+    }
+
+    @Given("I am on Fundamentals page from Learn Selenium")
+    public void iAmOnFundamentalsPageFromLearnSelenium() {
+        driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/fundamentals.html");
+    }
+
+
+    @When("I click on Return from Learn Selenium")
+    public void iClickOnReturnFromLearnSelenium() {
+        learnSeleniumPage.clickOnReturnButton();
+
+    }
+
+    @Then("I will redirected to Main page")
+    public void iWillRedirectedToMainPage() {
+        Assert.assertEquals("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/index.html", driver.getCurrentUrl());
     }
 }
