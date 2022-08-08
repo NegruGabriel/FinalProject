@@ -23,6 +23,8 @@ public class StepDefinitions {
     private VirtualPage virtualPage;
     private LearnSeleniumPage learnSeleniumPage;
 
+    private EnrollmentPage enrollmentPage;
+
 
 
     public StepDefinitions() {
@@ -34,6 +36,7 @@ public class StepDefinitions {
         inPersonPage = new InPersonPage(driver);
         virtualPage = new VirtualPage(driver);
         learnSeleniumPage = new LearnSeleniumPage(driver);
+        enrollmentPage=new EnrollmentPage(driver);
     }
 
     @Given("I am on Main Page")
@@ -283,8 +286,37 @@ public class StepDefinitions {
 
     }
 
-    @When("{string} as a FirstName")
+    @When("{string} as  FirstName")
  public void enterFirstName(String firstName) {
 
+
  }
+    @When("{string} as LastName")
+    public void enterLastName(String LastName) {
+
+    }
+
+    @When("{string} as Username")
+    public void enterUserName(String Username) {
+
+    }
+
+    @When("{string} as Password")
+    public void enterPassword(String Password) {
+
+    }
+
+    @When("{string} as Confirm password")
+    public void enterConfirmPassword(String ConfirmPassword) {
+
+
+    }
+
+    @Then("I click on Next Button")
+    public void iClickOnNextButton() {
+    }
+
+    @And("Error message appears")
+    public void errorMessageAppears() {
+    }
 }
