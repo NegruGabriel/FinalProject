@@ -6,3 +6,4 @@ Feature: Hybrid Page
     Given  I am on Hybrid Page
     When I click on the Return button from Hybrid
     Then I will be redirected to the Main Page
+

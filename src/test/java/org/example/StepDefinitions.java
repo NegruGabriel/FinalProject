@@ -2,12 +2,15 @@ package org.example;
 
 import PageObjects.*;
 import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.junit.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -49,7 +52,11 @@ public class StepDefinitions {
     }
 
     @After
-    public void cleanUp() throws InterruptedException {
+    public void cleanUp(Scenario scenario) throws InterruptedException {
+        if (scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "name");
+        }
         // Wait 2 seconds before closing window
         Thread.sleep(3000);
 
@@ -225,7 +232,7 @@ public class StepDefinitions {
 
     @Then("I will redirected to LinkedIn page")
     public void iWillRedirectedToLinkedInPage() {
-        Assert.assertEquals("https://www.linkedin.com/feed/",driver.getCurrentUrl() );
+        Assert.assertEquals("https://www.linkedin.com/",driver.getCurrentUrl() );
     }
 
     @And("I click on Sara Smith Instagram page")
@@ -264,4 +271,20 @@ public class StepDefinitions {
     public void iWillRedirectedToMainPage() {
         Assert.assertEquals("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/index.html", driver.getCurrentUrl());
     }
+
+
+    @Given("I am on the Enrollment Page")
+    public void iAmOnTheEnrollmentPage() {
+        driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/enrollment.html");
+    }
+
+    @When("I enter on Personal Information Step")
+    public void iEnterOnPersonalInformationStep() {
+
+    }
+
+    @When("{string} as a FirstName")
+ public void enterFirstName(String firstName) {
+
+ }
 }
