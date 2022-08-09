@@ -329,5 +329,29 @@ public class StepDefinitions {
 
     @And("the first name message is the correct one")
     public void theFirstNameMessageIsTheCorrectOne() {
+
         Assert.assertEquals(true,enrollmentPage.isFirstNameErrorCorrect());}
+
+    @Then("an error message for last name appears")
+    public void anErrorMessageForLastNameAppears() {
+        Assert.assertEquals(true,enrollmentPage.isLastNameErrorVisible());
+    }
+
+
+    @And("the last name message is the correct one")
+    public void theLastNameMessageIsTheCorrectOne() {
+        Assert.assertEquals(true,enrollmentPage.isLastNameErrorCorrect());
+    }
+
+    @Then("I will remain on the Personal Information section")
+    public void iWillRemainOnThePersonalInformationSection() {
+        Assert.assertEquals(true, enrollmentPage.isPersonalInformationHeaderVisible());
+    }
+
+    @Then("I will go the  Contact Information section")
+    public void iWillGoTheContactInformationSection() {
+        Assert.assertEquals(true, enrollmentPage.contactInformationHeader());
+
+
+    }
 }

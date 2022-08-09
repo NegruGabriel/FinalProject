@@ -63,6 +63,17 @@ public class EnrollmentPage {
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[1]/div[1]/div" )
     private  WebElement firstNameErrorMessage;
 
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/div[2]/div")
+    private WebElement lastNameErrorMessage;
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/h3")
+    private WebElement personalInformationHeader;
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/h3")
+    private WebElement contactInformationHeader;
+
+
+
     public EnrollmentPage(WebDriver driver) {
         PageFactory.initElements(driver,this);
     }
@@ -145,6 +156,24 @@ public class EnrollmentPage {
 
     public boolean isFirstNameErrorCorrect() {
         String errorMessage = firstNameErrorMessage.getText();
-        return errorMessage.equals("Your first name is required ");
+        return errorMessage.equals("Your first name is required");
+    }
+
+    public boolean isLastNameErrorVisible() {
+        String classCss = lastNameErrorMessage.getAttribute("class");
+        return classCss.equals("error-message");
+
+    }
+    public boolean isLastNameErrorCorrect() {
+        String errorMessage = lastNameErrorMessage.getText();
+        return errorMessage.equals("Your last name is required");
+    }
+
+    public boolean isPersonalInformationHeaderVisible() {
+        return personalInformationHeader.isDisplayed();
+    }
+
+    public boolean contactInformationHeader() {
+        return contactInformationHeader.isDisplayed();
     }
 }
