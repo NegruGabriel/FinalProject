@@ -57,6 +57,11 @@ public class EnrollmentPage {
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[4]/div[3]/div/div[2]/input" )
     private WebElement cvcPlaceHolder;
 
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
+    private  WebElement  nextButton;
+
+    @FindBy(xpath ="/html/body/div/div/section/div/form/div[1]/div[1]/div" )
+    private  WebElement firstNameErrorMessage;
 
     public EnrollmentPage(WebDriver driver) {
         PageFactory.initElements(driver,this);
@@ -126,5 +131,20 @@ public class EnrollmentPage {
     }
     public void writeInCvcPlaceHolder(String cvc){
         cvcPlaceHolder.sendKeys(cvc);
+    }
+
+    public void clickOnNextButton(){
+        nextButton.click();
+    }
+
+    public boolean isFirstNameErrorVisible() {
+        String classCss = firstNameErrorMessage.getAttribute("class");
+        return classCss.equals("error-message");
+
+    }
+
+    public boolean isFirstNameErrorCorrect() {
+        String errorMessage = firstNameErrorMessage.getText();
+        return errorMessage.equals("Your first name is required ");
     }
 }

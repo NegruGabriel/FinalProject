@@ -7,7 +7,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -286,38 +285,49 @@ public class StepDefinitions {
 
     }
 
-    @When("{string} as  FirstName")
+    @When("{string} as FirstName")
  public void enterFirstName(String firstName) {
         enrollmentPage.writeInFirstNamePlaceHolder(firstName);
 
 
  }
     @When("{string} as LastName")
-    public void enterLastName(String LastName) {
-
+    public void enterLastName(String lastName) {
+        enrollmentPage.writeInLastNamePlaceHolder(lastName);
     }
 
     @When("{string} as Username")
     public void enterUserName(String Username) {
-
+        enrollmentPage.writeInUserNamePlaceHolder(Username);
     }
 
     @When("{string} as Password")
     public void enterPassword(String Password) {
-
+        enrollmentPage.writeInPasswordPlaceHolder(Password);
     }
 
     @When("{string} as Confirm password")
     public void enterConfirmPassword(String ConfirmPassword) {
-
-
+        enrollmentPage.writeInConfirmPasswordPlaceHolder(ConfirmPassword);
     }
 
-    @Then("I click on Next Button")
+
+    @And("I click on Next Button")
     public void iClickOnNextButton() {
+        enrollmentPage.clickOnNextButton();
     }
 
-    @And("Error message appears")
-    public void errorMessageAppears() {
+    @Then("an error message for first name appears")
+    public void errorMessageForFirstNameAppears() {
+        Assert.assertEquals(true,enrollmentPage.isFirstNameErrorVisible());
     }
+
+    @Then("I wait for {int} second")
+    public void iWaitForSecond(int arg0) {
+        Utils.waitForElementToLoad(1);
+    }
+
+    @And("the first name message is the correct one")
+    public void theFirstNameMessageIsTheCorrectOne() {
+        Assert.assertEquals(true,enrollmentPage.isFirstNameErrorCorrect());}
 }
