@@ -288,6 +288,7 @@ public class StepDefinitions {
 
     @When("{string} as  FirstName")
  public void enterFirstName(String firstName) {
+        enrollmentPage.writeInFirstNamePlaceHolder(firstName);
 
 
  }

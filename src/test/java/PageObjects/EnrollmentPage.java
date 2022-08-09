@@ -62,45 +62,45 @@ public class EnrollmentPage {
         PageFactory.initElements(driver,this);
     }
 
-    public void clickOnFirstNamePlaceHolder() {
-        firstNamePlaceHolder.click();
+    public void writeInFirstNamePlaceHolder(String firstName) {
+        firstNamePlaceHolder.sendKeys(firstName);
     }
 
-    public void clickOnLastNamePlaceHolder() {
-        lastNamePlaceHolder.click();
+    public void writeInLastNamePlaceHolder(String lastName) {
+        lastNamePlaceHolder.sendKeys(lastName);
     }
 
 
-    public void clickOnUserNamePlaceHolder() {
-        userNamePlaceHolder.click();
+    public void writeInUserNamePlaceHolder(String userName) {
+        userNamePlaceHolder.sendKeys( userName);
     }
 
-    public void clickOnPasswordPlaceHolder() {
-        passwordPlaceHolder.click();
+    public void writeInPasswordPlaceHolder(String password) {
+        passwordPlaceHolder.sendKeys(password);
     }
 
-    public void clickOnConfirmPasswordPlaceHolder() {
-        confirmPasswordPlaceHolder.click();
+    public void writeInConfirmPasswordPlaceHolder(String confirmPassword) {
+        confirmPasswordPlaceHolder.sendKeys(confirmPassword);
     }
 
-    public void clickOnEmailPlaceHolder (){
-        emailPlaceHolder.click();
+    public void writeInEmailPlaceHolder (String email){
+        emailPlaceHolder.sendKeys(email);
     }
 
-   public  void clickOnPhonePlaceHolder(){
-        phonePlaceHolder.click();
+   public  void writeInPhonePlaceHolder(String phone){
+        phonePlaceHolder.sendKeys(phone);
    }
 
-   public void clickOnCountryPlaceHolder(){
-        countryPlaceHolder.click();
+   public void writeInCountryPlaceHolder(String country){
+        countryPlaceHolder.sendKeys(country);
    }
 
-   public void clickOnCityPlaceHolder(){
-        cityPlaceHolder.click();
+   public void writeInCityPlaceHolder(String city){
+        cityPlaceHolder.sendKeys(city);
    }
 
-   public void clickOnPostCodePlaceHolder(){
-        postCodePlaceHolder.click();
+   public void clickOnPostCodePlaceHolder(String postCode){
+        postCodePlaceHolder.sendKeys(postCode);
    }
    public  void clickOnSoftwareTestingManualTesterCertificate(){
        softwareTestingManualTesterCertificate.click();
@@ -117,14 +117,14 @@ public class EnrollmentPage {
         softwareTestingSecurityTesterCertificate.click();
     }
 
-    public void clickOnCardHolderNamePlaceHolder(){
-        cardHolderNamePlaceHolder.click();
+    public void writeInCardHolderNamePlaceHolder(String cardHolderName){
+        cardHolderNamePlaceHolder.sendKeys(cardHolderName);
     }
 
-    public void clickOnCardNumberPlaceHolder(){
-        cardNumberPlaceHolder.click();
+    public void writeInCardNumberPlaceHolder(String cardNumber ){
+        cardNumberPlaceHolder.sendKeys( cardNumber);
     }
-    public void clickOnCvcPlaceHolder(){
-        cvcPlaceHolder.click();
+    public void writeInCvcPlaceHolder(String cvc){
+        cvcPlaceHolder.sendKeys(cvc);
     }
 }
