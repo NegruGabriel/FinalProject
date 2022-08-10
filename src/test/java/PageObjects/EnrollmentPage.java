@@ -105,10 +105,10 @@ public class EnrollmentPage {
     @FindBy (xpath = "/html/body/div/div/section/div/form/div[5]/h3")
     private WebElement successHeaderVisible;
 
-    @FindBy(xpath ="//*[@id=\"month\"]" )
+    @FindBy(xpath ="//*[@id=\"month\"]/option[4]" )
     private WebElement monthOptionVisible;
 
-    @FindBy(xpath = "//*[@id=\"year\"]")
+    @FindBy(xpath = "//*[@id=\"year\"]/option[8]")
     private WebElement yearOptionVisible;
 
 
