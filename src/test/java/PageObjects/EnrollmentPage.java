@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class EnrollmentPage {
     @FindBy(xpath = "//*[@id=\"firstName\"]")
@@ -105,11 +106,11 @@ public class EnrollmentPage {
     @FindBy (xpath = "/html/body/div/div/section/div/form/div[5]/h3")
     private WebElement successHeaderVisible;
 
-    @FindBy(xpath ="//*[@id=\"month\"]/option[4]" )
-    private WebElement monthOptionVisible;
+    @FindBy(xpath ="//select[@id=\"month\"]" )
+    private WebElement monthOption;
 
-    @FindBy(xpath = "//*[@id=\"year\"]/option[8]")
-    private WebElement yearOptionVisible;
+    @FindBy(xpath = "//*[@id=\"year\"]")
+    private WebElement yearOption;
 
 
 
@@ -201,12 +202,14 @@ public class EnrollmentPage {
         previousButtonFromPaymentInformationSection.click();
     }
 
-    public void clickOnMonthOptionFromPaymentInformationSection(){
-        monthOptionVisible.click();
+    public void clickOnMonthOptionFromPaymentInformationSection(String month){
+        Select select =new Select(monthOption);
+        select.selectByVisibleText(month);
     }
 
-    public void clickOnYearFromPaymentInformationSection(){
-        yearOptionVisible.click();
+    public void clickOnYearFromPaymentInformationSection(String year){
+       Select select =new Select(yearOption);
+       select.selectByVisibleText(year);
     }
 
 

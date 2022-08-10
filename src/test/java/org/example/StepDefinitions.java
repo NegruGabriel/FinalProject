@@ -455,13 +455,13 @@ public class StepDefinitions {
     }
 
     @And("I select {string} from month box")
-    public void iSelectFromMonthBox() {
-        enrollmentPage.clickOnMonthOptionFromPaymentInformationSection();
+    public void iSelectFromMonthBox(String month) {
+        enrollmentPage.clickOnMonthOptionFromPaymentInformationSection(month);
     }
 
     @And("I select{string} from Year Box")
-    public void iSelectFromYearBox() {
-        enrollmentPage.clickOnYearFromPaymentInformationSection();
+    public void iSelectFromYearBox(String year) {
+        enrollmentPage.clickOnYearFromPaymentInformationSection(year);
     }
 
     @Then("Success step should appear")
