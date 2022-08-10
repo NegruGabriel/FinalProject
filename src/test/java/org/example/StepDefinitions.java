@@ -451,6 +451,21 @@ public class StepDefinitions {
 
     @Then("I should remain on Payment information step")
     public void iShouldRemainOnPaymentInformationStep() {
-        Assert.assertEquals(true, enrollmentPage.inPaymentInformationHeaderVisibile());
+        Assert.assertEquals(true, enrollmentPage.inPaymentInformationHeaderVisible());
+    }
+
+    @And("I select {string} from month box")
+    public void iSelectFromMonthBox() {
+        enrollmentPage.clickOnMonthOptionFromPaymentInformationSection();
+    }
+
+    @And("I select{string} from Year Box")
+    public void iSelectFromYearBox() {
+        enrollmentPage.clickOnYearFromPaymentInformationSection();
+    }
+
+    @Then("Success step should appear")
+    public void succesStepShouldAppear() {
+        Assert.assertEquals(true,enrollmentPage.inSuccesHeaderVisible());
     }
 }

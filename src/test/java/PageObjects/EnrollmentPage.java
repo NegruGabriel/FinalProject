@@ -100,7 +100,16 @@ public class EnrollmentPage {
     private WebElement labelSoftwareTestingSecurityTesterCertificate;
 
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[4]/h3" )
-    private WebElement paymentInformationHeaderVisibile;
+    private WebElement paymentInformationHeaderVisible;
+
+    @FindBy (xpath = "/html/body/div/div/section/div/form/div[5]/h3")
+    private WebElement successHeaderVisible;
+
+    @FindBy(xpath ="//*[@id=\"month\"]" )
+    private WebElement monthOptionVisible;
+
+    @FindBy(xpath = "//*[@id=\"year\"]")
+    private WebElement yearOptionVisible;
 
 
 
@@ -192,6 +201,15 @@ public class EnrollmentPage {
         previousButtonFromPaymentInformationSection.click();
     }
 
+    public void clickOnMonthOptionFromPaymentInformationSection(){
+        monthOptionVisible.click();
+    }
+
+    public void clickOnYearFromPaymentInformationSection(){
+        yearOptionVisible.click();
+    }
+
+
     public boolean isFirstNameErrorVisible() {
         String classCss = firstNameErrorMessage.getAttribute("class");
         return classCss.equals("error-message");
@@ -250,9 +268,13 @@ public boolean isLabelSoftwareTestingAutomationManualTesterCertificateVisible() 
     public boolean isLabelSoftwareSecurityTesterCertificateVisible() {
         return labelSoftwareTestingSecurityTesterCertificate.isDisplayed();
     }
- public boolean inPaymentInformationHeaderVisibile(){
-        return paymentInformationHeaderVisibile.isDisplayed();
+ public boolean inPaymentInformationHeaderVisible(){
+        return paymentInformationHeaderVisible.isDisplayed();
  }
 
-    }
+ public boolean inSuccesHeaderVisible(){
+        return successHeaderVisible.isDisplayed();
+ }
+
+}
 
