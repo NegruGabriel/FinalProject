@@ -354,4 +354,27 @@ public class StepDefinitions {
 
 
     }
+
+    @Given("I am on Course options from Enrollment page")
+    public void iAmOnCourseOptionsFromEnrollmentPage() {
+        driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/enrollment.html");
+        enrollmentPage.writeInFirstNamePlaceHolder("Ion");
+        enrollmentPage.writeInLastNamePlaceHolder("Ionel");
+        enrollmentPage.writeInUserNamePlaceHolder("Ionica");
+        enrollmentPage.writeInPasswordPlaceHolder("parola");
+        enrollmentPage.writeInConfirmPasswordPlaceHolder("parola");
+        enrollmentPage.clickOnNextButton();
+
+        enrollmentPage.writeInEmailPlaceHolder("asd@yahoo.com");
+        enrollmentPage.writeInPhonePlaceHolder("0721458756547");
+        enrollmentPage.writeInCountryPlaceHolder("Bagdad");
+        enrollmentPage.writeInCityPlaceHolder("Beirut");
+        enrollmentPage.writeInPostCodePlaceHolder("800900");
+        enrollmentPage.clickOnNextButton();
+
+    }
+
+    @When("I click on all Course options radio buttons")
+    public void iClickOnAllCourseOptionsRadioButtons() {
+    }
 }

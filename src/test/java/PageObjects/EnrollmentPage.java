@@ -36,18 +36,6 @@ public class EnrollmentPage {
     @FindBy(xpath = "//*[@id=\"postCode\"]")
     private WebElement postCodePlaceHolder;
 
-    @FindBy(xpath ="//*[@id=\"flexRadioButton1\"]")
-    private WebElement softwareTestingManualTesterCertificate;
-
-    @FindBy(xpath ="//*[@id=\"flexRadioButton2\"]")
-    private WebElement softwareTestingAutomationTesterCertificate;
-
-    @FindBy(xpath ="//*[@id=\"flexRadioButton3\"]")
-    private WebElement softwareTestingAutomationManualTesterCertificate;
-
-    @FindBy(xpath ="//*[@id=\"flexRadioButton4\"]")
-    private WebElement softwareTestingSecurityTesterCertificate;
-
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[4]/div[2]/input")
     private WebElement cardHolderNamePlaceHolder;
 
@@ -71,6 +59,18 @@ public class EnrollmentPage {
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/h3")
     private WebElement contactInformationHeader;
+
+    @FindBy(xpath ="//*[@id=\"flexRadioButton1\"]" )
+    private WebElement softwareTestingManualTesterCertificateOption;
+
+    @FindBy(xpath = "//*[@id=\"flexRadioButton2\"]" )
+    private WebElement softwareTestingAutomationTesterCertificateOption;
+
+    @FindBy(xpath ="//*[@id=\"flexRadioButton3\"]")
+    private WebElement softwareTestingAutomationManualTesterCertificateOption;
+
+    @FindBy(xpath ="//*[@id=\"flexRadioButton4\"]")
+    private WebElement softwareTestingSecurityTesterCertificateOption;
 
 
 
@@ -115,22 +115,23 @@ public class EnrollmentPage {
         cityPlaceHolder.sendKeys(city);
    }
 
-   public void clickOnPostCodePlaceHolder(String postCode){
+
+   public void writeInPostCodePlaceHolder(String postCode){
         postCodePlaceHolder.sendKeys(postCode);
    }
-   public  void clickOnSoftwareTestingManualTesterCertificate(){
-       softwareTestingManualTesterCertificate.click();
+   public  void clickOnSoftwareTestingManualTesterCertificateOption(){
+       softwareTestingManualTesterCertificateOption.click();
    }
-   public void clickOnSoftwareTestingAutomationTesterCertificate(){
-       softwareTestingAutomationTesterCertificate.click();
+   public void clickOnSoftwareTestingAutomationTesterCertificateOption(){
+       softwareTestingAutomationTesterCertificateOption.click();
    }
 
-    public void clickOnSoftwareTestingAutomationManualTesterCertificate(){
-        softwareTestingAutomationManualTesterCertificate.click();
+    public void clickOnSoftwareTestingAutomationManualTesterCertificateOption(){
+        softwareTestingAutomationManualTesterCertificateOption.click();
     }
 
-    public void clickOnSoftwareTestingSecurityTesterCertificate(){
-        softwareTestingSecurityTesterCertificate.click();
+    public void clickOnSoftwareTestingSecurityTesterCertificateOption(){
+        softwareTestingSecurityTesterCertificateOption.click();
     }
 
     public void writeInCardHolderNamePlaceHolder(String cardHolderName){
