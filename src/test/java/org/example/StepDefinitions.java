@@ -343,16 +343,14 @@ public class StepDefinitions {
         Assert.assertEquals(true,enrollmentPage.isLastNameErrorCorrect());
     }
 
-    @Then("I will remain on the Personal Information section")
-    public void iWillRemainOnThePersonalInformationSection() {
+    @Then("I will remain on the Personal Information step")
+    public void iWillRemainOnThePersonalInformationStep() {
         Assert.assertEquals(true, enrollmentPage.isPersonalInformationHeaderVisible());
     }
 
-    @Then("I will go the  Contact Information section")
-    public void iWillGoTheContactInformationSection() {
+    @Then("I will go the  Contact Information step")
+    public void iWillGoTheContactInformationStep() {
         Assert.assertEquals(true, enrollmentPage.contactInformationHeader());
-
-
     }
 
     @Given("I am on Course options from Enrollment page")
@@ -371,7 +369,6 @@ public class StepDefinitions {
         enrollmentPage.writeInCityPlaceHolder("Beirut");
         enrollmentPage.writeInPostCodePlaceHolder("800900");
         enrollmentPage.clickOnNextButtonForContactInformation();
-
     }
 
     @When("I click on all Course options radio buttons")
@@ -388,5 +385,47 @@ public class StepDefinitions {
         Assert.assertEquals(false,enrollmentPage.isSoftwareTestingAutomationOptionSelected());
         Assert.assertEquals(false,enrollmentPage.isSoftwareSecurityOptionSelected());
         Assert.assertEquals(false,enrollmentPage.isSoftwareTestingAutomationManualOptionSelected());
+    }
+
+    @When("I click on Next Button from Course options")
+    public void iClickOnNextButtonFromCourseOptions() {
+        enrollmentPage.clickOnNextButtonForCourseOptions();
+    }
+
+    @Then("i should remain on course option step")
+    public void iShouldRemainOnCourseOptionStep() {
+        Assert.assertEquals(true,enrollmentPage.isCourseOptionsStepVisible());
+    }
+
+    @Given("I am on Payment Information step from Enrollment page")
+    public void iAmOnPaymentInformationOption() {driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/enrollment.html");
+        enrollmentPage.writeInFirstNamePlaceHolder("Vasile");
+        enrollmentPage.writeInLastNamePlaceHolder("Banu");
+        enrollmentPage.writeInUserNamePlaceHolder("Vasica");
+        enrollmentPage.writeInPasswordPlaceHolder("bla");
+        enrollmentPage.writeInConfirmPasswordPlaceHolder("bla");
+        enrollmentPage.clickOnNextButtonForPersonalInformation();
+
+        enrollmentPage.writeInEmailPlaceHolder("bla@yahoo.com");
+        enrollmentPage.writeInPhonePlaceHolder("072785756547");
+        enrollmentPage.writeInCountryPlaceHolder("Belgia");
+        enrollmentPage.writeInCityPlaceHolder("Cairo");
+        enrollmentPage.writeInPostCodePlaceHolder("8008800");
+        enrollmentPage.clickOnNextButtonForContactInformation();
+        enrollmentPage.clickOnSoftwareTestingAutomationManualTesterCertificateOption();
+        enrollmentPage.clickOnNextButtonForCourseOptions();
+    }
+
+    @When("I click on previous button")
+    public void iClickOnPreviousButton() {
+        enrollmentPage.clickOnPreviousButtonFromPaymentInformationSection();
+    }
+
+    @Then("the text option from Course options should appear")
+    public void theTextOptionFromCourseOptionsShouldAppear() {
+        Assert.assertEquals(true, enrollmentPage.isLabelSoftwareTestingManualTesterCertificateVisible());
+        Assert.assertEquals(true,enrollmentPage.isLabelSoftwareTestingAutomationTesterCertificateVisible());
+        Assert.assertEquals(true,enrollmentPage.isLabelSoftwareTestingAutomationManualTesterCertificateVisible());
+        Assert.assertEquals(true,enrollmentPage.isLabelSoftwareSecurityTesterCertificateVisible());
     }
 }

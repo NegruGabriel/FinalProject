@@ -75,6 +75,27 @@ public class EnrollmentPage {
     @FindBy(xpath ="//*[@id=\"flexRadioButton4\"]")
     private WebElement softwareTestingSecurityTesterCertificateOption;
 
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/button[2]" )
+    private  WebElement nextButtonForCourseOptions;
+
+    @FindBy(xpath="/html/body/div/div/section/div/form/div[3]")
+    private WebElement courseOptionsStep;
+
+    @FindBy(xpath="/html/body/div/div/section/div/form/div[4]/div[4]/button[1]")
+    private WebElement previousButtonFromPaymentInformationSection;
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[1]/label")
+    private WebElement labelSoftwareTestingManualTesterCertificate;
+
+    @FindBy(xpath ="/html/body/div/div/section/div/form/div[3]/div[2]/label" )
+    private WebElement labelSoftwareTestingAutomationTesterCertificate;
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[3]/label")
+    private WebElement labelSoftwareTestingAutomationManualTesterCertificate;
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[4]/label")
+    private WebElement labelSoftwareTestingSecurityTesterCertificate;
+
 
 
     public EnrollmentPage(WebDriver driver) {
@@ -137,6 +158,7 @@ public class EnrollmentPage {
         softwareTestingSecurityTesterCertificateOption.click();
     }
 
+
     public void writeInCardHolderNamePlaceHolder(String cardHolderName){
         cardHolderNamePlaceHolder.sendKeys(cardHolderName);
     }
@@ -153,6 +175,12 @@ public class EnrollmentPage {
     }
     public void clickOnNextButtonForContactInformation(){
         nextButtonForContactInformation.click();
+    }
+    public  void clickOnNextButtonForCourseOptions(){
+        nextButtonForCourseOptions.click();
+    }
+    public void clickOnPreviousButtonFromPaymentInformationSection(){
+        previousButtonFromPaymentInformationSection.click();
     }
 
     public boolean isFirstNameErrorVisible() {
@@ -196,4 +224,23 @@ public class EnrollmentPage {
     public boolean isSoftwareTestingAutomationManualOptionSelected() {
         return softwareTestingAutomationManualTesterCertificateOption.isSelected();
     }
+    public boolean isCourseOptionsStepVisible(){
+        return courseOptionsStep.isDisplayed();
+    }
+
+    public boolean isLabelSoftwareTestingManualTesterCertificateVisible(){
+        return labelSoftwareTestingManualTesterCertificate.isDisplayed();
+    }
+public boolean isLabelSoftwareTestingAutomationTesterCertificateVisible(){
+        return labelSoftwareTestingAutomationTesterCertificate.isDisplayed();
+
 }
+public boolean isLabelSoftwareTestingAutomationManualTesterCertificateVisible() {
+        return labelSoftwareTestingAutomationManualTesterCertificate.isDisplayed();
+    }
+    public boolean isLabelSoftwareSecurityTesterCertificateVisible() {
+        return labelSoftwareTestingSecurityTesterCertificate.isDisplayed();
+    }
+
+    }
+
