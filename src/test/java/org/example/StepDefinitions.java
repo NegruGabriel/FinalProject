@@ -428,4 +428,29 @@ public class StepDefinitions {
         Assert.assertEquals(true,enrollmentPage.isLabelSoftwareTestingAutomationManualTesterCertificateVisible());
         Assert.assertEquals(true,enrollmentPage.isLabelSoftwareSecurityTesterCertificateVisible());
     }
+
+    @When("I enter {string} as Card holder name")
+    public void iEnterAsCardHolderName(String CardHolderName) {
+        enrollmentPage.writeInCardHolderNamePlaceHolder(CardHolderName);
+    }
+
+    @And("I enter {string} as Card number")
+    public void iEnterAsCardNumber(String CardNumber) {
+        enrollmentPage.writeInCardNumberPlaceHolder(CardNumber);
+    }
+
+    @And("I enter {string} as CVC")
+    public void iEnterAsCVC(String cvc) {
+        enrollmentPage.writeInCvcPlaceHolder(cvc);
+    }
+
+    @And("I click on Next Button from Payment information")
+    public void iClickOnNextButtonFromPaymentInformation() {
+        enrollmentPage.clickOnNextButtonFromPaymentInformationSection();
+    }
+
+    @Then("I should remain on Payment information step")
+    public void iShouldRemainOnPaymentInformationStep() {
+        Assert.assertEquals(true, enrollmentPage.inPaymentInformationHeaderVisibile());
+    }
 }

@@ -78,6 +78,9 @@ public class EnrollmentPage {
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/button[2]" )
     private  WebElement nextButtonForCourseOptions;
 
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[4]/div[4]/button[2]")
+    private WebElement nextButtonFromPaymentInformationSection;
+
     @FindBy(xpath="/html/body/div/div/section/div/form/div[3]")
     private WebElement courseOptionsStep;
 
@@ -95,6 +98,9 @@ public class EnrollmentPage {
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[4]/label")
     private WebElement labelSoftwareTestingSecurityTesterCertificate;
+
+    @FindBy(xpath ="/html/body/div/div/section/div/form/div[4]/h3" )
+    private WebElement paymentInformationHeaderVisibile;
 
 
 
@@ -179,6 +185,9 @@ public class EnrollmentPage {
     public  void clickOnNextButtonForCourseOptions(){
         nextButtonForCourseOptions.click();
     }
+    public void clickOnNextButtonFromPaymentInformationSection(){
+        nextButtonFromPaymentInformationSection.click();
+    }
     public void clickOnPreviousButtonFromPaymentInformationSection(){
         previousButtonFromPaymentInformationSection.click();
     }
@@ -241,6 +250,9 @@ public boolean isLabelSoftwareTestingAutomationManualTesterCertificateVisible() 
     public boolean isLabelSoftwareSecurityTesterCertificateVisible() {
         return labelSoftwareTestingSecurityTesterCertificate.isDisplayed();
     }
+ public boolean inPaymentInformationHeaderVisibile(){
+        return paymentInformationHeaderVisibile.isDisplayed();
+ }
 
     }
 
