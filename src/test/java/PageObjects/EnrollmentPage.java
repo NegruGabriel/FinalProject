@@ -46,7 +46,10 @@ public class EnrollmentPage {
     private WebElement cvcPlaceHolder;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
-    private  WebElement  nextButton;
+    private  WebElement  nextButtonForPersonalInformation;
+
+    @FindBy (xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
+    private WebElement nextButtonForContactInformation;
 
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[1]/div[1]/div" )
     private  WebElement firstNameErrorMessage;
@@ -145,8 +148,11 @@ public class EnrollmentPage {
         cvcPlaceHolder.sendKeys(cvc);
     }
 
-    public void clickOnNextButton(){
-        nextButton.click();
+    public void clickOnNextButtonForPersonalInformation(){
+        nextButtonForPersonalInformation.click();
+    }
+    public void clickOnNextButtonForContactInformation(){
+        nextButtonForContactInformation.click();
     }
 
     public boolean isFirstNameErrorVisible() {
@@ -176,5 +182,18 @@ public class EnrollmentPage {
 
     public boolean contactInformationHeader() {
         return contactInformationHeader.isDisplayed();
+    }
+
+    public boolean isSoftwareTestingManualOptionSelected() {
+        return softwareTestingAutomationManualTesterCertificateOption.isSelected();
+    }
+    public boolean isSoftwareTestingAutomationOptionSelected(){
+        return softwareTestingAutomationTesterCertificateOption.isSelected();
+    }
+    public boolean isSoftwareSecurityOptionSelected(){
+        return softwareTestingSecurityTesterCertificateOption.isSelected();
+    }
+    public boolean isSoftwareTestingAutomationManualOptionSelected() {
+        return softwareTestingAutomationManualTesterCertificateOption.isSelected();
     }
 }

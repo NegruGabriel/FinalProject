@@ -314,7 +314,7 @@ public class StepDefinitions {
 
     @And("I click on Next Button")
     public void iClickOnNextButton() {
-        enrollmentPage.clickOnNextButton();
+        enrollmentPage.clickOnNextButtonForPersonalInformation();
     }
 
     @Then("an error message for first name appears")
@@ -363,18 +363,30 @@ public class StepDefinitions {
         enrollmentPage.writeInUserNamePlaceHolder("Ionica");
         enrollmentPage.writeInPasswordPlaceHolder("parola");
         enrollmentPage.writeInConfirmPasswordPlaceHolder("parola");
-        enrollmentPage.clickOnNextButton();
+        enrollmentPage.clickOnNextButtonForPersonalInformation();
 
         enrollmentPage.writeInEmailPlaceHolder("asd@yahoo.com");
         enrollmentPage.writeInPhonePlaceHolder("0721458756547");
         enrollmentPage.writeInCountryPlaceHolder("Bagdad");
         enrollmentPage.writeInCityPlaceHolder("Beirut");
         enrollmentPage.writeInPostCodePlaceHolder("800900");
-        enrollmentPage.clickOnNextButton();
+        enrollmentPage.clickOnNextButtonForContactInformation();
 
     }
 
     @When("I click on all Course options radio buttons")
     public void iClickOnAllCourseOptionsRadioButtons() {
+        enrollmentPage.clickOnSoftwareTestingManualTesterCertificateOption();
+        enrollmentPage.clickOnSoftwareTestingAutomationTesterCertificateOption();
+        enrollmentPage.clickOnSoftwareTestingSecurityTesterCertificateOption();
+        enrollmentPage.clickOnSoftwareTestingAutomationManualTesterCertificateOption();
+    }
+
+    @Then("the last clicked option should be the only one selected")
+    public void theLastClickedOptionShouldBeTheOnlyOneSelected() {
+        Assert.assertEquals(false,enrollmentPage.isSoftwareTestingManualOptionSelected());
+        Assert.assertEquals(false,enrollmentPage.isSoftwareTestingAutomationOptionSelected());
+        Assert.assertEquals(false,enrollmentPage.isSoftwareSecurityOptionSelected());
+        Assert.assertEquals(false,enrollmentPage.isSoftwareTestingAutomationManualOptionSelected());
     }
 }
