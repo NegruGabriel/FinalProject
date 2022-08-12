@@ -40,7 +40,7 @@ public class StepDefinitions {
 
     @Given("I am on Main Page")
     public void onTheMainPage() {
-        driver.get(Utils.getMainPageUrl());
+       driver.get(Utils.getMainPageUrl());
     }
 
     @When("I click on Instructors")
@@ -77,11 +77,6 @@ public class StepDefinitions {
         Assert.assertEquals("Personal information", mainPage.getPersonalInformationHeader());
     }
 
-    @When("I enter an invalid mail")
-    public void iEnterAnInvalidMail() {
-        mainPage.writeEmailInNewsletterTextBox("asdg@.com");
-    }
-
     @And("click on Submit")
     public void clickOnSubmit() {
         mainPage.clickOnSubmit();
@@ -92,10 +87,6 @@ public class StepDefinitions {
       Assert.assertEquals(true, mainPage.isNewsletterTextBoxWithError());
     }
 
-    @When("I enter a valid mail")
-    public void iEnterAValidMail() {
-        mainPage.writeEmailInNewsletterTextBox("asdf@yahoo.com");
-    }
 
     @Then("a confirmation message appears")
     public void aConfirmationMessageAppears() {
@@ -399,7 +390,7 @@ public class StepDefinitions {
 
     @Given("I am on Payment Information step from Enrollment page")
     public void iAmOnPaymentInformationOption() {driver.get("file:///C:/Users/Admin/Downloads/Testing-Env-master/Testing-Env-master/routes/enrollment.html");
-        enrollmentPage.writeInFirstNamePlaceHolder("Vasile");
+        enrollmentPage.writeInFirstNamePlaceHolder("Vasi");
         enrollmentPage.writeInLastNamePlaceHolder("Banu");
         enrollmentPage.writeInUserNamePlaceHolder("Vasica");
         enrollmentPage.writeInPasswordPlaceHolder("bla");
@@ -467,5 +458,16 @@ public class StepDefinitions {
     @Then("Success step should appear")
     public void succesStepShouldAppear() {
         Assert.assertEquals(true,enrollmentPage.inSuccesHeaderVisible());
+    }
+
+    @Then("I will redirected to Selenium page")
+    public void iWillRedirectedToSeleniumPage() {
+        Assert.assertEquals(true, mainPage.isSeleniumHeaderVisible());
+
+    }
+
+    @When("I enter {string} as email")
+    public void iEnterAsEmail(String email) {
+        mainPage.writeEmailInNewsletterTextBox(email);
     }
 }

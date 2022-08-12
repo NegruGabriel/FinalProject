@@ -15,13 +15,13 @@ Feature: Main Page
 
     Scenario: Sign Up with a valid email
     Given I am on Main Page
-    When I enter a valid mail
+    When I enter "asdf@yahoo.com" as email
     And  click on Submit
     Then a confirmation message appears
 
   Scenario: Sign Up with an invalid email
     Given I am on Main Page
-    When I enter an invalid mail
+    When I enter"asdg@.com" as mail
     And  click on Submit
     Then a red border will be shown
 
@@ -43,7 +43,7 @@ Feature: Main Page
   Scenario:  Go to Read More from Learn Selenium page
     Given I am on Main Page
     When I click on the Read More from Learn Selenium
-    Then I will redirected to Fundamentals page
+    Then I will redirected to Selenium page
 
   Scenario: Go to "How do I sign up?" from Questions
     Given I am on Main Page
