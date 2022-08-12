@@ -137,16 +137,16 @@ public class StepDefinitions {
     }
 
     @When("I click on the Questions Button")
-    public void iClickOnTheQuestionsButton() {
-        mainPage.iClickOnTheQuestionsButton();
+    public void lickOnTheQuestionsButton() {
+        mainPage.clickOnTheQuestionsButton();
     }
     
     @And("I click on {string}")
     public void iClickOn(String question) {
         if (question.equals("How do I sign up?")) {
-            mainPage.iClickOnHowDoISignUp();
+            mainPage.clickOnHowDoISignUp();
     }else if (question.equals("Where is your institution located?")) {
-            mainPage.iClickOnWhereIsYourInstitutionLocated();
+            mainPage.clickOnWhereIsYourInstitutionLocated();
         }
     }
 
@@ -462,7 +462,7 @@ public class StepDefinitions {
 
     @Then("I will redirected to Selenium page")
     public void iWillRedirectedToSeleniumPage() {
-        Assert.assertEquals(true, mainPage.isSeleniumHeaderVisible());
+        Assert.assertEquals(true, mainPage.isVisibleSeleniumHeader());
 
     }
 

@@ -68,7 +68,7 @@ public class MainPage {
     private WebElement whereIsYourInstitutionLocatedText;
 
     @FindBy(xpath = "//*[@id=\"questions\"]/div/h2")
-    private WebElement questionsSection;
+    private WebElement questionsHeader;
 
 
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[1]")
@@ -78,10 +78,10 @@ public class MainPage {
     private WebElement janeDoeLinkedInLink;
 
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[4]/div/div/a[4]")
-    private WebElement saraSmithInstagramPage;
+    private WebElement saraSmithInstagramLink;
 
     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[3]/div/div/a[2] ")
-    private WebElement steveSmithFbPage;
+    private WebElement steveSmithFbLink;
 
 
     private WebDriver driver;
@@ -170,17 +170,17 @@ public class MainPage {
         readMoreForLearnSeleniumLink.click();
     }
 
-    public void iClickOnTheQuestionsButton() {
+    public void clickOnTheQuestionsButton() {
         clickOnQuestionsLink.click();
     }
 
-    public void iClickOnHowDoISignUp() {
-        Utils.scrollToElement(driver, questionsSection);
+    public void clickOnHowDoISignUp() {
+        Utils.scrollToElement(driver, questionsHeader);
         howDoISignUpButton.click();
     }
 
-    public void iClickOnWhereIsYourInstitutionLocated() {
-        Utils.scrollToElement(driver, questionsSection);
+    public void clickOnWhereIsYourInstitutionLocated() {
+        Utils.scrollToElement(driver, questionsHeader);
         whereIsYourInstitutionLocatedButton.click();
     }
 
@@ -196,15 +196,15 @@ public class MainPage {
 
     public void clickOnSaraSmithInstagramPage() {
         Utils.scrollToElement(driver, instructorsHeader);
-        saraSmithInstagramPage.click();
+        saraSmithInstagramLink.click();
     }
 
     public void clickOnSteveSmithFbPage() {
         Utils.scrollToElement(driver, instructorsHeader);
-        steveSmithFbPage.click();
+        steveSmithFbLink.click();
     }
 
-    public boolean isSeleniumHeaderVisible() {
+    public boolean isVisibleSeleniumHeader() {
         return courseTypeHeader.getText().equals("Selenium");
     }
 }
