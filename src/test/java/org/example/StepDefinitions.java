@@ -456,8 +456,8 @@ public class StepDefinitions {
     }
 
     @Then("Success step should appear")
-    public void succesStepShouldAppear() {
-        Assert.assertEquals(true,enrollmentPage.inSuccesHeaderVisible());
+    public void successStepShouldAppear() {
+        Assert.assertEquals(true,enrollmentPage.inSuccessHeaderVisible());
     }
 
     @Then("I will redirected to Selenium page")

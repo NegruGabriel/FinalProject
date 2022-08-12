@@ -47,10 +47,10 @@ public class EnrollmentPage {
     private WebElement cvcPlaceHolder;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
-    private  WebElement  nextButtonForPersonalInformation;
+    private  WebElement  nextButtonForPersonalInformationButton;
 
     @FindBy (xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
-    private WebElement nextButtonForContactInformation;
+    private WebElement nextButtonForContactInformationButton;
 
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[1]/div[1]/div" )
     private  WebElement firstNameErrorMessage;
@@ -65,40 +65,40 @@ public class EnrollmentPage {
     private WebElement contactInformationHeader;
 
     @FindBy(xpath ="//*[@id=\"flexRadioButton1\"]" )
-    private WebElement softwareTestingManualTesterCertificateOption;
+    private WebElement softwareTestingManualTesterCertificateOptionRadioButton;
 
     @FindBy(xpath = "//*[@id=\"flexRadioButton2\"]" )
-    private WebElement softwareTestingAutomationTesterCertificateOption;
+    private WebElement softwareTestingAutomationTesterCertificateOptionRadioButton;
 
     @FindBy(xpath ="//*[@id=\"flexRadioButton3\"]")
-    private WebElement softwareTestingAutomationManualTesterCertificateOption;
+    private WebElement softwareTestingAutomationManualTesterCertificateOptionRadioButton;
 
     @FindBy(xpath ="//*[@id=\"flexRadioButton4\"]")
-    private WebElement softwareTestingSecurityTesterCertificateOption;
+    private WebElement softwareTestingSecurityTesterCertificateOptionRadioButton;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/button[2]" )
-    private  WebElement nextButtonForCourseOptions;
+    private  WebElement nextButtonForCourseOptionsButton;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[4]/div[4]/button[2]")
-    private WebElement nextButtonFromPaymentInformationSection;
+    private WebElement nextButtonFromPaymentInformationSectionButton;
 
     @FindBy(xpath="/html/body/div/div/section/div/form/div[3]")
     private WebElement courseOptionsStep;
 
     @FindBy(xpath="/html/body/div/div/section/div/form/div[4]/div[4]/button[1]")
-    private WebElement previousButtonFromPaymentInformationSection;
+    private WebElement previousButtonFromPaymentInformationSectionButton;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[1]/label")
-    private WebElement labelSoftwareTestingManualTesterCertificate;
+    private WebElement labelSoftwareTestingManualTesterCertificateLabel;
 
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[3]/div[2]/label" )
-    private WebElement labelSoftwareTestingAutomationTesterCertificate;
+    private WebElement labelSoftwareTestingAutomationTesterCertificateLabel;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[3]/label")
-    private WebElement labelSoftwareTestingAutomationManualTesterCertificate;
+    private WebElement labelSoftwareTestingAutomationManualTesterCertificateLabel;
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/div[4]/label")
-    private WebElement labelSoftwareTestingSecurityTesterCertificate;
+    private WebElement labelSoftwareTestingSecurityTesterCertificateLabel;
 
     @FindBy(xpath ="/html/body/div/div/section/div/form/div[4]/h3" )
     private WebElement paymentInformationHeaderVisible;
@@ -160,18 +160,18 @@ public class EnrollmentPage {
         postCodePlaceHolder.sendKeys(postCode);
    }
    public  void clickOnSoftwareTestingManualTesterCertificateOption(){
-       softwareTestingManualTesterCertificateOption.click();
+       softwareTestingManualTesterCertificateOptionRadioButton.click();
    }
    public void clickOnSoftwareTestingAutomationTesterCertificateOption(){
-       softwareTestingAutomationTesterCertificateOption.click();
+       softwareTestingAutomationTesterCertificateOptionRadioButton.click();
    }
 
     public void clickOnSoftwareTestingAutomationManualTesterCertificateOption(){
-        softwareTestingAutomationManualTesterCertificateOption.click();
+        softwareTestingAutomationManualTesterCertificateOptionRadioButton.click();
     }
 
     public void clickOnSoftwareTestingSecurityTesterCertificateOption(){
-        softwareTestingSecurityTesterCertificateOption.click();
+        softwareTestingSecurityTesterCertificateOptionRadioButton.click();
     }
 
 
@@ -187,19 +187,19 @@ public class EnrollmentPage {
     }
 
     public void clickOnNextButtonForPersonalInformation(){
-        nextButtonForPersonalInformation.click();
+        nextButtonForPersonalInformationButton.click();
     }
     public void clickOnNextButtonForContactInformation(){
-        nextButtonForContactInformation.click();
+        nextButtonForContactInformationButton.click();
     }
     public  void clickOnNextButtonForCourseOptions(){
-        nextButtonForCourseOptions.click();
+        nextButtonForCourseOptionsButton.click();
     }
     public void clickOnNextButtonFromPaymentInformationSection(){
-        nextButtonFromPaymentInformationSection.click();
+        nextButtonFromPaymentInformationSectionButton.click();
     }
     public void clickOnPreviousButtonFromPaymentInformationSection(){
-        previousButtonFromPaymentInformationSection.click();
+        previousButtonFromPaymentInformationSectionButton.click();
     }
 
     public void clickOnMonthOptionFromPaymentInformationSection(String month){
@@ -243,39 +243,39 @@ public class EnrollmentPage {
     }
 
     public boolean isSoftwareTestingManualOptionSelected() {
-        return softwareTestingAutomationManualTesterCertificateOption.isSelected();
+        return softwareTestingAutomationManualTesterCertificateOptionRadioButton.isSelected();
     }
     public boolean isSoftwareTestingAutomationOptionSelected(){
-        return softwareTestingAutomationTesterCertificateOption.isSelected();
+        return softwareTestingAutomationTesterCertificateOptionRadioButton.isSelected();
     }
     public boolean isSoftwareSecurityOptionSelected(){
-        return softwareTestingSecurityTesterCertificateOption.isSelected();
+        return softwareTestingSecurityTesterCertificateOptionRadioButton.isSelected();
     }
     public boolean isSoftwareTestingAutomationManualOptionSelected() {
-        return softwareTestingAutomationManualTesterCertificateOption.isSelected();
+        return softwareTestingAutomationManualTesterCertificateOptionRadioButton.isSelected();
     }
     public boolean isCourseOptionsStepVisible(){
         return courseOptionsStep.isDisplayed();
     }
 
     public boolean isLabelSoftwareTestingManualTesterCertificateVisible(){
-        return labelSoftwareTestingManualTesterCertificate.isDisplayed();
+        return labelSoftwareTestingManualTesterCertificateLabel.isDisplayed();
     }
 public boolean isLabelSoftwareTestingAutomationTesterCertificateVisible(){
-        return labelSoftwareTestingAutomationTesterCertificate.isDisplayed();
+        return labelSoftwareTestingAutomationTesterCertificateLabel.isDisplayed();
 
 }
 public boolean isLabelSoftwareTestingAutomationManualTesterCertificateVisible() {
-        return labelSoftwareTestingAutomationManualTesterCertificate.isDisplayed();
+        return labelSoftwareTestingAutomationManualTesterCertificateLabel.isDisplayed();
     }
     public boolean isLabelSoftwareSecurityTesterCertificateVisible() {
-        return labelSoftwareTestingSecurityTesterCertificate.isDisplayed();
+        return labelSoftwareTestingSecurityTesterCertificateLabel.isDisplayed();
     }
  public boolean inPaymentInformationHeaderVisible(){
         return paymentInformationHeaderVisible.isDisplayed();
  }
 
- public boolean inSuccesHeaderVisible(){
+ public boolean inSuccessHeaderVisible(){
         return successHeaderVisible.isDisplayed();
  }
 
