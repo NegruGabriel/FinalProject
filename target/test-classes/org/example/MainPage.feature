@@ -21,7 +21,7 @@ Feature: Main Page
 
   Scenario: Sign Up with an invalid email
     Given I am on Main Page
-    When I enter"asdg@.com" as mail
+    When I enter "asdg@.com" as email
     And  click on Submit
     Then a red border will be shown
 
